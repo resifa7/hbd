@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1503424886300-4ec7c2b1d91b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff3c7;
+            font-family: 'IM Fell English SC', serif;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.75);
+            margin: 5% auto;
+            padding: 2rem;
+            max-width: 600px;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #f5d042;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        .photo {
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo img {
+            width: 100%;
+            max-width: 300px;
+            border: 3px solid #f5d042;
+            border-radius: 10px;
+            transition: all 0.8s ease;
+            display: none;
+        }
+
+        .magic-glow {
+            box-shadow: 0 0 30px 10px #f5d042;
+            transform: scale(1.05) rotate(1deg);
+            animation: flicker 1s infinite;
+            display: block !important;
+        }
+
+        @keyframes flicker {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px #f5d042;
+            }
+
+            50% {
+                box-shadow: 0 0 35px #ffd700;
+            }
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .surprise-btn {
+            background-color: #f5d042;
+            color: #000;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            font-family: 'IM Fell English SC', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Selamat Ulang Tahun, Sayang!</h1>
+        <div class="photo">
+            <img id="birthdayPhoto" src="first.jpeg" alt="Foto Ulang Tahun" />
+        </div>
+        <p>
+            Ayang adalah hal terindah dalam hidupku.
+        </p>
+        <button class="surprise-btn" onclick="showSurprise()">Klik untuk Kejutan!</button>
+        <div id="surpriseMessage" style="display:none; margin-top:1.5rem; font-size:1.2rem; color:#f5d042;">
+            ✨ Foto kita pertama kali. Aku berdoa untuk selalu bersamamu. 💛
+        </div>
+        <div class="footer">
+            Resifa dari Gryffindor. ❤️
+        </div>
+    </div>
+
+    <script>
+        function showSurprise() {
+            const message = document.getElementById('surpriseMessage');
+            const photo = document.getElementById('birthdayPhoto');
+            message.style.display = 'block';
+            photo.classList.add('magic-glow');
+        }
+    </script>
+</body>
+
+</html>
